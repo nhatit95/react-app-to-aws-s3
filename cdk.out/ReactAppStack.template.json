@@ -1,0 +1,570 @@
+{
+ "Resources": {
+  "HostedZoneDB99F866": {
+   "Type": "AWS::Route53::HostedZone",
+   "Properties": {
+    "Name": "nhatnguyenit.link."
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/HostedZone/Resource"
+   }
+  },
+  "SiteBucket397A1860": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketName": "reactapp6.nhatnguyenit.link",
+    "Tags": [
+     {
+      "Key": "aws-cdk:cr-owned:d37f5d0c",
+      "Value": "true"
+     }
+    ],
+    "WebsiteConfiguration": {
+     "IndexDocument": "index.html"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/SiteBucket/Resource"
+   }
+  },
+  "SiteBucketPolicy3AC1D0F8": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "SiteBucket397A1860"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "SiteBucket397A1860",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/SiteBucket/Policy/Resource"
+   }
+  },
+  "Certificate4E7ABB08": {
+   "Type": "AWS::CertificateManager::Certificate",
+   "Properties": {
+    "DomainName": "reactapp6.nhatnguyenit.link",
+    "DomainValidationOptions": [
+     {
+      "DomainName": "reactapp6.nhatnguyenit.link",
+      "HostedZoneId": {
+       "Ref": "HostedZoneDB99F866"
+      }
+     }
+    ],
+    "ValidationMethod": "DNS"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/Certificate/Resource"
+   }
+  },
+  "SiteDistributionCFDistribution209CF7F5": {
+   "Type": "AWS::CloudFront::Distribution",
+   "Properties": {
+    "DistributionConfig": {
+     "Aliases": [
+      "reactapp6.nhatnguyenit.link"
+     ],
+     "DefaultCacheBehavior": {
+      "AllowedMethods": [
+       "GET",
+       "HEAD"
+      ],
+      "CachedMethods": [
+       "GET",
+       "HEAD"
+      ],
+      "Compress": true,
+      "ForwardedValues": {
+       "Cookies": {
+        "Forward": "none"
+       },
+       "QueryString": false
+      },
+      "TargetOriginId": "origin1",
+      "ViewerProtocolPolicy": "redirect-to-https"
+     },
+     "DefaultRootObject": "index.html",
+     "Enabled": true,
+     "HttpVersion": "http2",
+     "IPV6Enabled": true,
+     "Origins": [
+      {
+       "ConnectionAttempts": 3,
+       "ConnectionTimeout": 10,
+       "CustomOriginConfig": {
+        "HTTPPort": 80,
+        "HTTPSPort": 443,
+        "OriginKeepaliveTimeout": 5,
+        "OriginProtocolPolicy": "http-only",
+        "OriginReadTimeout": 30,
+        "OriginSSLProtocols": [
+         "TLSv1.2"
+        ]
+       },
+       "DomainName": {
+        "Fn::Select": [
+         2,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::GetAtt": [
+             "SiteBucket397A1860",
+             "WebsiteURL"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "Id": "origin1"
+      }
+     ],
+     "PriceClass": "PriceClass_100",
+     "ViewerCertificate": {
+      "AcmCertificateArn": {
+       "Ref": "Certificate4E7ABB08"
+      },
+      "MinimumProtocolVersion": "TLSv1.2_2019",
+      "SslSupportMethod": "sni-only"
+     }
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/SiteDistribution/CFDistribution"
+   }
+  },
+  "SiteRecordC49845F9": {
+   "Type": "AWS::Route53::RecordSet",
+   "Properties": {
+    "Name": "reactapp6.nhatnguyenit.link.",
+    "Type": "A",
+    "AliasTarget": {
+     "DNSName": {
+      "Fn::GetAtt": [
+       "SiteDistributionCFDistribution209CF7F5",
+       "DomainName"
+      ]
+     },
+     "HostedZoneId": {
+      "Fn::FindInMap": [
+       "AWSCloudFrontPartitionHostedZoneIdMap",
+       {
+        "Ref": "AWS::Partition"
+       },
+       "zoneId"
+      ]
+     }
+    },
+    "HostedZoneId": {
+     "Ref": "HostedZoneDB99F866"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/SiteRecord/Resource"
+   }
+  },
+  "DeploymentAwsCliLayerB82B26A3": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Ref": "AssetParameters93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355S3Bucket5814A021"
+     },
+     "S3Key": {
+      "Fn::Join": [
+       "",
+       [
+        {
+         "Fn::Select": [
+          0,
+          {
+           "Fn::Split": [
+            "||",
+            {
+             "Ref": "AssetParameters93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355S3VersionKeyC5CAB387"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "Fn::Select": [
+          1,
+          {
+           "Fn::Split": [
+            "||",
+            {
+             "Ref": "AssetParameters93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355S3VersionKeyC5CAB387"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      ]
+     }
+    },
+    "Description": "/opt/awscli/aws"
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/Deployment/AwsCliLayer/Resource",
+    "aws:asset:path": "asset.93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355.zip",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Content"
+   }
+  },
+  "DeploymentCustomResource47E8B2E6": {
+   "Type": "Custom::CDKBucketDeployment",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+      "Arn"
+     ]
+    },
+    "SourceBucketNames": [
+     {
+      "Ref": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3BucketA36747CE"
+     }
+    ],
+    "SourceObjectKeys": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        {
+         "Fn::Select": [
+          0,
+          {
+           "Fn::Split": [
+            "||",
+            {
+             "Ref": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3VersionKey95028EAB"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "Fn::Select": [
+          1,
+          {
+           "Fn::Split": [
+            "||",
+            {
+             "Ref": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3VersionKey95028EAB"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      ]
+     }
+    ],
+    "DestinationBucketName": {
+     "Ref": "SiteBucket397A1860"
+    },
+    "Prune": true,
+    "DistributionId": {
+     "Ref": "SiteDistributionCFDistribution209CF7F5"
+    },
+    "DistributionPaths": [
+     "/*"
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/Deployment/CustomResource/Default"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Ref": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3BucketA36747CE"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Ref": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3BucketA36747CE"
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:GetObject*",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:DeleteObject*",
+        "s3:PutObject*",
+        "s3:Abort*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "SiteBucket397A1860",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "SiteBucket397A1860",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "cloudfront:GetInvalidation",
+        "cloudfront:CreateInvalidation"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+    "Roles": [
+     {
+      "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Ref": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3BucketF23C0DE7"
+     },
+     "S3Key": {
+      "Fn::Join": [
+       "",
+       [
+        {
+         "Fn::Select": [
+          0,
+          {
+           "Fn::Split": [
+            "||",
+            {
+             "Ref": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3VersionKey5E97B17D"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "Fn::Select": [
+          1,
+          {
+           "Fn::Split": [
+            "||",
+            {
+             "Ref": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3VersionKey5E97B17D"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      ]
+     }
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      "Arn"
+     ]
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "DeploymentAwsCliLayerB82B26A3"
+     }
+    ],
+    "Runtime": "python3.7",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+    "aws:asset:path": "asset.f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01SwW7CMAz9lt3TQIU2bbdBEdphk1CRNmm3kLookMQocYZQlX9f0gLtye+5fn7ua0tevs35/OldXHwhm9Osk+iAdzsS8sRq8BicBFa19kucz8oe2NJ7oPT4kEkVPKGZjo0YrScXJOXuVjhhgMBFlo06h4HgecG7D/QEzS/aXjxhyxrSJc2wMqMdUGQ+SVZBnqDfekND2aJW8jq2b3wgK+EhMgmOVKukIDDCigM43lVjL2snNM1rDE3r0FKay3iT8Q/s1yq9mtoHUmizasrzkUXXwFnj1UCSDhesHw0mcoKe90FGpoXZNyIZtPZTXMF9g/N57S7lq4HQboKVvdEDpNE7jkwJw7sa9ZB+rmMSA4p3k0JngyJ9AakVX158pVXvGZnFBvjRz/7KF16+ph/i6JUqXLCkDPB6qP+NSAPCLQIAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "ReactAppStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Mappings": {
+  "AWSCloudFrontPartitionHostedZoneIdMap": {
+   "aws": {
+    "zoneId": "Z2FDTNDATAQYW2"
+   },
+   "aws-cn": {
+    "zoneId": "Z3RFFRIM2A3IF5"
+   }
+  }
+ },
+ "Parameters": {
+  "AssetParameters93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355S3Bucket5814A021": {
+   "Type": "String",
+   "Description": "S3 bucket for asset \"93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355\""
+  },
+  "AssetParameters93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355S3VersionKeyC5CAB387": {
+   "Type": "String",
+   "Description": "S3 key for asset version \"93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355\""
+  },
+  "AssetParameters93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355ArtifactHashB18700C6": {
+   "Type": "String",
+   "Description": "Artifact hash for asset \"93f399b022bc96ef255974c344d7cd8214ae340cd04674e332cce197163a5355\""
+  },
+  "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3BucketF23C0DE7": {
+   "Type": "String",
+   "Description": "S3 bucket for asset \"f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da\""
+  },
+  "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3VersionKey5E97B17D": {
+   "Type": "String",
+   "Description": "S3 key for asset version \"f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da\""
+  },
+  "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daArtifactHashD85D28D8": {
+   "Type": "String",
+   "Description": "Artifact hash for asset \"f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da\""
+  },
+  "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3BucketA36747CE": {
+   "Type": "String",
+   "Description": "S3 bucket for asset \"6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c\""
+  },
+  "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3VersionKey95028EAB": {
+   "Type": "String",
+   "Description": "S3 key for asset version \"6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c\""
+  },
+  "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cArtifactHashA4A90FC9": {
+   "Type": "String",
+   "Description": "Artifact hash for asset \"6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c\""
+  }
+ }
+}
