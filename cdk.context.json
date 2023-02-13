@@ -1,10 +1,6 @@
 {
-  "hosted-zone:account=230638288020:domainName=nhatnguyenit.link:region=ap-southeast-2": {
-    "Id": "/hostedzone/Z099483222R5C8L5610OD",
-    "Name": "nhatnguyenit.link."
-  },
-  "hosted-zone:account=230638288020:domainName=nhatnguyenit.link:region=ap-southeast-2": {
-    "Id": "/hostedzone/Z099483222R5C8L5610OD",
-    "Name": "nhatnguyenit.link."
+  "hosted-zone:account=230638288020:domainName=nhatnguyenit.com:region=ap-southeast-1": {
+    "Id": "/hostedzone/Z09643512P3Z21DRT9G8N",
+    "Name": "nhatnguyenit.com."
   }
 }

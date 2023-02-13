@@ -9,13 +9,46 @@
     },
     "ReactAppStack": {
       "type": "aws:cloudformation:stack",
-      "environment": "aws://230638288020/ap-southeast-2",
+      "environment": "aws://230638288020/ap-southeast-1",
       "properties": {
         "templateFile": "ReactAppStack.template.json",
         "validateOnSynth": false
       },
       "metadata": {
         "/ReactAppStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52",
+              "id": "57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52",
+              "packaging": "zip",
+              "sourceHash": "57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52",
+              "s3BucketParameter": "AssetParameters57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52S3BucketAF5CA86B",
+              "s3KeyParameter": "AssetParameters57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52S3VersionKey50057F68",
+              "artifactHashParameter": "AssetParameters57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52ArtifactHash050EEE47"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/construct-compat.js:416:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:202:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "Stack.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:40:35)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          },
           {
             "type": "aws:cdk:asset",
             "data": {
@@ -40,7 +73,7 @@
               "new LayerVersion (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
               "new AwsCliLayer (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -75,7 +108,7 @@
               "SingletonFunction.ensureLambda (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
               "new SingletonFunction (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -88,13 +121,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c",
-              "id": "6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c",
+              "path": "asset.a73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2",
+              "id": "a73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2",
               "packaging": "zip",
-              "sourceHash": "6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c",
-              "s3BucketParameter": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3BucketA36747CE",
-              "s3KeyParameter": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3VersionKey95028EAB",
-              "artifactHashParameter": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cArtifactHashA4A90FC9"
+              "sourceHash": "a73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2",
+              "s3BucketParameter": "AssetParametersa73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2S3Bucket0EE23B34",
+              "s3KeyParameter": "AssetParametersa73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2S3VersionKeyA5F81E16",
+              "artifactHashParameter": "AssetParametersa73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2ArtifactHashF7292CAC"
             },
             "trace": [
               "ConstructNode.addMetadata (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/construct-compat.js:416:62)",
@@ -109,24 +142,7 @@
               "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
               "Array.map (<anonymous>)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
-              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
-              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
-              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
-              "Module.load (node:internal/modules/cjs/loader:1033:32)",
-              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
-              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
-              "node:internal/main/run_main_module:22:47"
-            ]
-          }
-        ],
-        "/ReactAppStack/HostedZone/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "HostedZoneDB99F866",
-            "trace": [
-              "new HostedZone (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/hosted-zone.js:34:26)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:24:22)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -143,7 +159,7 @@
             "data": "SiteBucket397A1860",
             "trace": [
               "new Bucket (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3/lib/bucket.js:666:26)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:28:28)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:25:28)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -164,7 +180,7 @@
               "Function.addToPrincipalOrResource (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-iam/lib/grant.js:75:49)",
               "Bucket.grantPublicAccess (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3/lib/bucket.js:367:26)",
               "new Bucket (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3/lib/bucket.js:718:18)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:28:28)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:25:28)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -175,13 +191,15 @@
             ]
           }
         ],
-        "/ReactAppStack/Certificate/Resource": [
+        "/ReactAppStack/SiteCertificate/CertificateRequestorFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "Certificate4E7ABB08",
+            "data": "SiteCertificateCertificateRequestorFunctionServiceRole645E891D",
             "trace": [
-              "new Certificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/certificate.js:105:22)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:44:36)",
+              "new Role (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-iam/lib/role.js:63:22)",
+              "new Function (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:35)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:40:35)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -192,13 +210,16 @@
             ]
           }
         ],
-        "/ReactAppStack/SiteDistribution/CFDistribution": [
+        "/ReactAppStack/SiteCertificate/CertificateRequestorFunction/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SiteDistributionCFDistribution209CF7F5",
+            "data": "SiteCertificateCertificateRequestorFunctionServiceRoleDefaultPolicy96ED5C9C",
             "trace": [
-              "new CloudFrontWebDistribution (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-cloudfront/lib/web-distribution.js:326:30)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:49:34)",
+              "new Policy (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-iam/lib/policy.js:57:26)",
+              "Role.addToPrincipalPolicy (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-iam/lib/role.js:247:34)",
+              "Function.addToRolePolicy (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:101:19)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:47:27)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -209,14 +230,14 @@
             ]
           }
         ],
-        "/ReactAppStack/SiteRecord/Resource": [
+        "/ReactAppStack/SiteCertificate/CertificateRequestorFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SiteRecordC49845F9",
+            "data": "SiteCertificateCertificateRequestorFunction7CFA7DEA",
             "trace": [
-              "new RecordSet (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:179:27)",
-              "new ARecord (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:211:9)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:70:9)",
+              "new Function (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function.js:172:26)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:40:35)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -227,53 +248,95 @@
             ]
           }
         ],
-        "/ReactAppStack/AWSCloudFrontPartitionHostedZoneIdMap": [
+        "/ReactAppStack/SiteCertificate/CertificateRequestorResource/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AWSCloudFrontPartitionHostedZoneIdMap",
-            "trace": [
-              "Function.getHostedZoneId (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53-targets/lib/cloudfront-target.js:23:13)",
-              "CloudFrontTarget.bind (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53-targets/lib/cloudfront-target.js:37:44)",
-              "new RecordSet (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:184:79)",
-              "new ARecord (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:211:9)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:70:9)",
-              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
-              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
-              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
-              "Module.load (node:internal/modules/cjs/loader:1033:32)",
-              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
-              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
-              "node:internal/main/run_main_module:22:47"
-            ]
-          }
-        ],
-        "/ReactAppStack/Deployment/AwsCliLayer/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "DeploymentAwsCliLayerB82B26A3",
-            "trace": [
-              "new LayerVersion (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/layers.js:54:26)",
-              "new AwsCliLayer (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
-              "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
-              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
-              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
-              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
-              "Module.load (node:internal/modules/cjs/loader:1033:32)",
-              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
-              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
-              "node:internal/main/run_main_module:22:47"
-            ]
-          }
-        ],
-        "/ReactAppStack/Deployment/CustomResource/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "DeploymentCustomResource47E8B2E6",
+            "data": "SiteCertificateCertificateRequestorResource6021082A",
             "trace": [
               "new CustomResource (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/custom-resource.js:49:25)",
-              "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:117:19)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:59:29)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/AssetParameters/57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52S3BucketAF5CA86B",
+            "trace": [
+              "new FileAssetParameters (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "Stack.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:40:35)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/AssetParameters/57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52S3VersionKey50057F68",
+            "trace": [
+              "new FileAssetParameters (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "Stack.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:40:35)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/AssetParameters/57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters57ed3297d84e7c092939da72067d3c6c454ad63e86b4b5079d4306b424eafd52ArtifactHash050EEE47",
+            "trace": [
+              "new FileAssetParameters (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "Stack.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "new DnsValidatedCertificate (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-certificatemanager/lib/dns-validated-certificate.js:40:35)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:32:36)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -301,7 +364,7 @@
               "new LayerVersion (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
               "new AwsCliLayer (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -329,7 +392,7 @@
               "new LayerVersion (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
               "new AwsCliLayer (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -357,7 +420,7 @@
               "new LayerVersion (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
               "new AwsCliLayer (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -386,7 +449,7 @@
               "SingletonFunction.ensureLambda (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
               "new SingletonFunction (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -415,7 +478,7 @@
               "SingletonFunction.ensureLambda (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
               "new SingletonFunction (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -444,7 +507,7 @@
               "SingletonFunction.ensureLambda (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
               "new SingletonFunction (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -455,10 +518,10 @@
             ]
           }
         ],
-        "/ReactAppStack/AssetParameters/6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c/S3Bucket": [
+        "/ReactAppStack/AssetParameters/a73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3BucketA36747CE",
+            "data": "AssetParametersa73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2S3Bucket0EE23B34",
             "trace": [
               "new FileAssetParameters (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
               "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
@@ -472,7 +535,7 @@
               "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
               "Array.map (<anonymous>)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -483,10 +546,10 @@
             ]
           }
         ],
-        "/ReactAppStack/AssetParameters/6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c/S3VersionKey": [
+        "/ReactAppStack/AssetParameters/a73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cS3VersionKey95028EAB",
+            "data": "AssetParametersa73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2S3VersionKeyA5F81E16",
             "trace": [
               "new FileAssetParameters (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
               "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
@@ -500,7 +563,7 @@
               "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
               "Array.map (<anonymous>)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -511,10 +574,10 @@
             ]
           }
         ],
-        "/ReactAppStack/AssetParameters/6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9c/ArtifactHash": [
+        "/ReactAppStack/AssetParameters/a73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters6f52beaccd1199bf5d34c155b334e404d6ebc945a0cef317f7d0047bfbd68d9cArtifactHashA4A90FC9",
+            "data": "AssetParametersa73f28270f31ce75baf61b7ca8a2151c99b9d913309b31e609ca4017590afef2ArtifactHashF7292CAC",
             "trace": [
               "new FileAssetParameters (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
               "LegacyStackSynthesizer.doAddFileAsset (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
@@ -528,7 +591,99 @@
               "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
               "Array.map (<anonymous>)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/SiteDistribution/CFDistribution": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SiteDistributionCFDistribution209CF7F5",
+            "trace": [
+              "new CloudFrontWebDistribution (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-cloudfront/lib/web-distribution.js:326:30)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:38:34)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/SiteRecord/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SiteRecordC49845F9",
+            "trace": [
+              "new RecordSet (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:179:27)",
+              "new ARecord (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:211:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:59:9)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/AWSCloudFrontPartitionHostedZoneIdMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWSCloudFrontPartitionHostedZoneIdMap",
+            "trace": [
+              "Function.getHostedZoneId (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53-targets/lib/cloudfront-target.js:23:13)",
+              "CloudFrontTarget.bind (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53-targets/lib/cloudfront-target.js:37:44)",
+              "new RecordSet (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:184:79)",
+              "new ARecord (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-route53/lib/record-set.js:211:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:59:9)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/Deployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentAwsCliLayerB82B26A3",
+            "trace": [
+              "new LayerVersion (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/layers.js:54:26)",
+              "new AwsCliLayer (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
+              "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
+              "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1155:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
+              "Module.load (node:internal/modules/cjs/loader:1033:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:868:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:22:47"
+            ]
+          }
+        ],
+        "/ReactAppStack/Deployment/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentCustomResource47E8B2E6",
+            "trace": [
+              "new CustomResource (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/core/lib/custom-resource.js:49:25)",
+              "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:117:19)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -549,7 +704,7 @@
               "SingletonFunction.ensureLambda (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
               "new SingletonFunction (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -576,7 +731,7 @@
               "/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
               "Array.map (<anonymous>)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
@@ -596,7 +751,7 @@
               "SingletonFunction.ensureLambda (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
               "new SingletonFunction (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
               "new BucketDeployment (/Volumes/DATA/AWS-Demo/react-app-to-aws/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
-              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:76:9)",
+              "new Stack (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/stack.js:65:9)",
               "Object.<anonymous> (/Volumes/DATA/AWS-Demo/react-app-to-aws/cdk/index.js:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1155:14)",
               "Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)",
